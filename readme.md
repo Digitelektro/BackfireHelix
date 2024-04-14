@@ -1,41 +1,39 @@
 # Backfire helix antenna for L and S band weather satellites
 
-This feed is suitable for deep prime focus dishes having f/D ratio around 0.3-0.5. The polarization is LHCP made for RHCP satellites since the dish flips the polarization.
+This feed is suitable for deep prime focus dishes with an f/D ratio ranging from 0.3 to 0.5. Considering the mirroring effect the dish has on signal polarization, this feed is designed as LHCP; with the dish flipping it, making reception of RHCP satellite signals suitable.
 
-Please read carefully the notes below before you start building it!
+Please read carefully the notes below before you start building it yourself!
 
 ![NEC4](pictures/feed_assembled.jpg)
 
 
 ## Background
 
-The original "Wifi" grid dish or Nooelec grid dish comes with a linear polarized feed, but L-band weather satellites have circularly polarized signals. So I wanted to make a circular polarized feed to get that extra 3dB due to polarization mismatch. After reading a lot about antenna feeds, I chose this feed as it has very good properties and it is easy to build. After simulating and testing it, it proved to work great on my setup. (I have tested it against a dipole feed tuned to 1.7Ghz that comes with the Nooelec grid dish, and I have got around 3db better SNR)
+The original "WiFi" grid and the Nooelec grid dishes come with linear polarized feeds. However, L-band polar-orbiting weather satellites transmit circularly polarized signals.  This polarization mismatch results in a 3 dB loss when using linear feeds. I wanted to design a circularly polarized feed to address this issue. After reading a lot about antenna feeds, I selected this particular design for its favorable characteristics and ease of construction. After simulation and real-world tests, it proved to work great on my setup; in contrast with the Nooelec's linear feed, I got about 3 dB better SNR.
 
 This Backfire helix design is based on Hisamatsu Nakano, Junji Yamauchi, Hiroaki Mimaki: Backfire Radiation from a Monofilar Helix with a Small Ground Plane, IEEE TRANSACTIONS ON ANTENNAS AND PROPAGATION, VOL. 36, NO. 10, OCTOBER 1988
 
 Another good resource is [W1Ghz antenna book](http://www.w1ghz.org/antbook/contents.htm).
 
-The scaffold design is based on Dereksgc helix design.
+The scaffold design is based on [Derek's](https://twitter.com/dereksgc) helix design.
 
 ## Important notes
 
-- You can find the PCB gerber files for the backplate in the gerber folder. If you decide to make the PCB, it should fit tightly into the antenna scaffold, if not use sandpaper or a sharp knife to make the hole bigger. The SMA connector for the PCB is https://eu.mouser.com/ProductDetail/712-CONSMA001-C-G or similar.
+- You'll find the PCB Gerber files for the backplate in the Gerber folder. If you decide to build the PCB, make sure it snugly fits into the antenna scaffold; otherwise, adjust the hole size with sandpaper or a sharp knife. The SMA connector I've used is [from Mouser](https://eu.mouser.com/ProductDetail/712-CONSMA001-C-G), but similar should work too.
 
-- The size of the back plate plays an important role in the feed pattern! Making whatever size will not work! For the same reason any metalic material around the backplate could reduce the feed performance, so it is the best to hold the feed from underneath, probably anything smaller than the backplate will not change the feed characteristics. I haven't tried to use metalic arm yet, I only tested it with the 3D printed arm and with PVC tube.
+- The size of the back plate plays an important role in the feed pattern! Using a random-sized plate will not work! Additionally, anything metallic around the backplate can negatively impact feed performance; therefore, it’s advisable to support the feed from underneath. Anything smaller than the backplate shouldn't alter feed characteristics. I haven't tested the metallic feed holder yet as I'm using a 3D-printed one and a PVC tube.
 
-- The feed impedance is around 150 ohm, you need to tune it to 50 ohm, otherwise you will have mismatch and you loose signal. A good VSWR ~1.2 can be achieved with adding a tuning element.
-For antenna matching you need to a have a VNA. Just placing a random wire to the antenna will not work!
-Matching the antenna takes time and practice, you have to play with the wire distance from the backplate, the tuning element length, tuning element distance from ground plate and the tuning element distance from the center. See pictures for a reference.
+- The feed’s impedance is approximately 150 ohms. To achieve optimal performance, it needs to be tuned to 50 ohms to avoid an impedance mismatch and signal loss. Adding a tuning strip to the feed can help achieve a good VSWR of around 1.2. For precise matching, utilize a Vector Network Analyzer (VNA) to determine the correct strip or wire size—keep in mind that not any size will suffice. Antenna matching requires experimentation, adjusting wire distance from the backplate, tuning element length, and distance from the ground plate and center. See pictures for a reference.
 
-- You need to have the possible shortest cable between the feed and the LNA, any loss before the LNA will increase the noise. Use a good quality coax cable, or you can make your own arm and fit an LNA right below the backplate.
+- You must use the shortest cable possible for connecting the feed to the LNA, as cable length increases the received signal attenuation. I suggest you make your replacement antenna feed holder and fit an LNA right below the backplate if the one which came with the dish doesn't allow it. If that's not possible, use a good-quality low-loss coax.
 
-- Since I have dish from nooelec, the arm is designed for it. If you have a different dish, you need to design your own arm! The focus point of this feed is not the same as the original dipole feed. You need to find the correct spot by testing.
+- Nooelec's feed holder on their dish (like I have) is specifically designed for it. If you have a different dish, you must design a custom feed holder! The focal point of my helix differs from the original dipole feed. You must experiment to find the correct spot.
 
-- While the helix is a wideband antenna, the backfire helix radiation pattern is greatly depends on the frequency. This design works great around 1650-1800Mhz.
+- While a regular helix functions as a wideband antenna, the radiation pattern of a backfire helix is significantly influenced by the frequency. Specifically, this design performs exceptionally well in the frequency range of 1650 to 1800 MHz.
 
-- Holes on the scaffold for is made for ~1.2mm wire.
+- Holes on the scaffold are made for ~1.2mm wire.
 
-- Holes for holding together the arm and the feed are for M3 bolts. You can use cable tiers too.
+- Holes for holding together the feed holder and the feed are for M3 bolts. You can use cable tiers too.
 
 ## Tuning pictures
 
@@ -57,4 +55,4 @@ Matching the antenna takes time and practice, you have to play with the wire dis
 
 ## Future
 
-An LNA circuit could be made on the back plate. Comming soon!
+An LNA circuit could be made on the back plate. Coming soon!
