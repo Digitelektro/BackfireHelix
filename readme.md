@@ -19,6 +19,8 @@ The scaffold design is based on [Derek's](https://twitter.com/dereksgc) helix de
 
 ## Important notes
 
+- If you have a grid dish like a Wf-fi grid dish or Nooelec grid dish, it must be covered with a fine mesh wire, since these dishes is made for linear polarized signals.
+
 - You'll find the PCB Gerber files for the backplate in the Gerber folder. If you decide to build the PCB, make sure it snugly fits into the antenna scaffold; otherwise, adjust the hole size with sandpaper or a sharp knife. The SMA connector I've used is [from Mouser](https://eu.mouser.com/ProductDetail/712-CONSMA001-C-G), but similar should work too.
 
 - The size of the back plate plays an important role in the feed pattern! Using a random-sized plate will not work! Additionally, anything metallic around the backplate can negatively impact feed performance; therefore, it’s advisable to support the feed from underneath. Anything smaller than the backplate shouldn't alter feed characteristics. I haven't tested the metallic feed holder yet as I'm using a 3D-printed one and a PVC tube.
